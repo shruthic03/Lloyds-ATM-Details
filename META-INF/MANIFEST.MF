@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.group.lloyds.identity.authentication.lab.LloydsATMDetail
+ s.LloydsAtmDetailsApplication
+
