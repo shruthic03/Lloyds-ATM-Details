@@ -20,6 +20,7 @@ import javax.annotation.Generated;
     "GeographicCoordinates"
 })
 @Generated("jsonschema2pojo")
+
 public class GeoLocation {
 
     /**
@@ -57,4 +58,10 @@ public class GeoLocation {
         this.geographicCoordinates = geographicCoordinates;
     }
 
+    @Override
+    public String toString() {
+        return "GeoLocation{" +
+                "geographicCoordinates=" + geographicCoordinates +
+                '}';
+    }
 }

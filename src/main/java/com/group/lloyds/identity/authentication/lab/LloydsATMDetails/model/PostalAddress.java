@@ -28,6 +28,7 @@ import java.util.List;
     "GeoLocation"
 })
 @Generated("jsonschema2pojo")
+
 public class PostalAddress {
 
     /**
@@ -279,4 +280,17 @@ public class PostalAddress {
         this.geoLocation = geoLocation;
     }
 
+    @Override
+    public String toString() {
+        return "PostalAddress{" +
+                "addressLine=" + addressLine +
+                ", buildingNumber='" + buildingNumber + '\'' +
+                ", streetName='" + streetName + '\'' +
+                ", townName='" + townName + '\'' +
+                ", countrySubDivision=" + countrySubDivision +
+                ", country='" + country + '\'' +
+                ", postCode='" + postCode + '\'' +
+                ", geoLocation=" + geoLocation +
+                '}';
+    }
 }

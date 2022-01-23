@@ -1,68 +1,32 @@
 package com.group.lloyds.identity.authentication.lab.LloydsATMDetails.exceptions;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
-
+@Getter
+@Setter
 public class AtmCustomExceptions {
-    private HttpStatus httpStatus;
-    private String message;
-    private List<String> errors;
+    private String errorMessage, description;
+    private Date dateAndTime;
 
-    public AtmCustomExceptions(HttpStatus httpStatus, String message, List<String> errors) {
+    public AtmCustomExceptions(String errorMessage, String description, Date dateAndTime) {
         super();
-        this.httpStatus = httpStatus;
-        this.message = message;
-        this.errors = errors;
+        this.errorMessage = errorMessage;
+        this.description = description;
+        this.dateAndTime = dateAndTime;
     }
 
-    public AtmCustomExceptions(HttpStatus httpStatus, String message, String error) {
-        super();
-        this.httpStatus = httpStatus;
-        this.message = message;
-        errors = Arrays.asList(error);
-    }
 
-    /**
-     * @return the httpStatus
-     */
-    public HttpStatus getHttpStatus() {
-        return httpStatus;
-    }
-
-    /**
-     * @param httpStatus the httpStatus to set
-     */
-    public void setHttpStatus(HttpStatus httpStatus) {
-        this.httpStatus = httpStatus;
-    }
-
-    /**
-     * @return the message
-     */
-    public String getMessage() {
-        return message;
-    }
-
-    /**
-     * @param message the message to set
-     */
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    /**
-     * @return the errors
-     */
-    public List<String> getErrors() {
-        return errors;
-    }
-
-    /**
-     * @param errors the errors to set
-     */
-    public void setErrors(List<String> errors) {
-        this.errors = errors;
+    @Override
+    public String toString() {
+        return "AtmCustomExceptions{" +
+                "errorMessage='" + errorMessage + '\'' +
+                ", description='" + description + '\'' +
+                ", dateAndTime=" + dateAndTime +
+                '}';
     }
 }

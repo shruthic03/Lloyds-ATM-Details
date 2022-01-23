@@ -24,6 +24,7 @@ import java.util.List;
     "PostalAddress"
 })
 @Generated("jsonschema2pojo")
+
 public class Location {
 
     /**
@@ -154,4 +155,13 @@ public class Location {
         this.postalAddress = postalAddress;
     }
 
+    @Override
+    public String toString() {
+        return "Location{" +
+                "locationCategory=" + locationCategory +
+                ", otherLocationCategory=" + otherLocationCategory +
+                ", site=" + site +
+                ", postalAddress=" + postalAddress +
+                '}';
+    }
 }

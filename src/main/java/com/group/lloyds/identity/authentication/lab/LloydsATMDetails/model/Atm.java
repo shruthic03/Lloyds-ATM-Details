@@ -29,6 +29,7 @@ import java.util.Map;
     "Location"
 })
 @Generated("jsonschema2pojo")
+
 public class Atm {
 
     /**
@@ -425,4 +426,22 @@ public class Atm {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return "Atm{" +
+                "identification='" + identification + '\'' +
+                ", supportedLanguages=" + supportedLanguages +
+                ", aTMServices=" + aTMServices +
+                ", accessibility=" + accessibility +
+                ", access24HoursIndicator=" + access24HoursIndicator +
+                ", supportedCurrencies=" + supportedCurrencies +
+                ", minimumPossibleAmount='" + minimumPossibleAmount + '\'' +
+                ", note=" + note +
+                ", otherAccessibility=" + otherAccessibility +
+                ", otherATMServices=" + otherATMServices +
+                ", branch=" + branch +
+                ", location=" + location +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }
