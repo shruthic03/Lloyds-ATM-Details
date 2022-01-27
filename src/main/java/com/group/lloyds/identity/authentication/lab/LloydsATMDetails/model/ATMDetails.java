@@ -4,6 +4,8 @@ package com.group.lloyds.identity.authentication.lab.LloydsATMDetails.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import javax.annotation.Generated;
 import java.util.List;
@@ -14,6 +16,8 @@ import java.util.List;
     "data"
 })
 @Generated("jsonschema2pojo")
+@NoArgsConstructor
+@AllArgsConstructor
 public class ATMDetails {
 
     /**

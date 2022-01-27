@@ -2,6 +2,8 @@
 package com.group.lloyds.identity.authentication.lab.LloydsATMDetails.model;
 
 import com.fasterxml.jackson.annotation.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import javax.annotation.Generated;
 import java.util.HashMap;
@@ -29,7 +31,8 @@ import java.util.Map;
     "Location"
 })
 @Generated("jsonschema2pojo")
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class Atm {
 
     /**
@@ -145,6 +148,9 @@ public class Atm {
     private Location location;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    public <T> Atm(List<T> asList) {
+    }
 
     /**
      * Identification

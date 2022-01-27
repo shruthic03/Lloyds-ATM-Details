@@ -5,8 +5,10 @@ import com.group.lloyds.identity.authentication.lab.LloydsATMDetails.exceptions.
 import com.group.lloyds.identity.authentication.lab.LloydsATMDetails.model.ATMDetails;
 import com.group.lloyds.identity.authentication.lab.LloydsATMDetails.model.Atm;
 import com.group.lloyds.identity.authentication.lab.LloydsATMDetails.model.Brand;
+import com.group.lloyds.identity.authentication.lab.LloydsATMDetails.service.ILloydsAtmDetailsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,17 +31,16 @@ public class LloydsAtmDetailsController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LloydsAtmDetailsController.class);
 
+    @Autowired
+    private ILloydsAtmDetailsService service;
 
     @GetMapping("/getATMInfo")
     public ResponseEntity<?> getATMInformation(@RequestParam final String identifier,@RequestParam final String url) {
 
         Atm response = null;
        try {
-            RestTemplate restTemplate = new RestTemplate();
-            URI uri = new URI(url);
 
-            ResponseEntity<ATMDetails> result = restTemplate.getForEntity(uri, ATMDetails.class);
-            ATMDetails endResult = result.getBody();
+            ATMDetails endResult = service.getAtmDetails(url);
 
             List<Brand> brands = endResult.getData().stream().flatMap(list -> list.getBrand().stream()).collect(Collectors.toList());
             List<Atm> newAtms = brands.stream().flatMap(list -> list.getAtm().stream()).collect(Collectors.toList());
